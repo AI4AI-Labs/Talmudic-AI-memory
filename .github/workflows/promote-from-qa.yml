@@ -1,6 +1,6 @@
 name: promote-from-qa
 
-# PROD pulls QA. This workflow lives on AI4AI-Labs/talmudic-ai-memory.
+# PROD pulls QA. This workflow lives on AI4AI-Labs/Talmudic-AI-memory.
 # It never runs on the QA repository and never pushes to QA.
 
 on:
@@ -26,7 +26,7 @@ permissions:
 jobs:
   promote:
     name: "Pull exact QA SHA and open PROD PR"
-    if: github.repository == 'AI4AI-Labs/talmudic-ai-memory' && github.ref == 'refs/heads/main'
+    if: github.repository == 'AI4AI-Labs/Talmudic-AI-memory' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: production
     permissions:
@@ -36,7 +36,7 @@ jobs:
       EXPECTED_SHA: ${{ inputs.expected_sha }}
       VERSION: ${{ inputs.version }}
       QA_REPO: gilav2/Talmudic-AI-memory
-      PROD_REPO: AI4AI-Labs/talmudic-ai-memory
+      PROD_REPO: AI4AI-Labs/Talmudic-AI-memory
     steps:
       - name: Validate inputs
         shell: bash
