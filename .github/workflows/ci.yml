@@ -1,0 +1,86 @@
+name: ci
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+jobs:
+  package:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip setuptools
+      - run: python -m pip install -e . --no-build-isolation
+      - name: Import and CLI help
+        run: |
+          python -c "import talmudic_memory; assert talmudic_memory.__version__ == '0.3.0b1'"
+          python -m compileall -q src
+          talmudic --help
+      - name: CLI init (POSIX)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          tmp=$(mktemp -d)
+          init_json=$(talmudic --root "$tmp" --agent-id ci-agent --session-id ci-session --role tester --model ci-model init demo --task "CI" --next "continue")
+          printf '%s\n' "$init_json" | python3 -c '
+          import json,sys
+          data = json.load(sys.stdin)
+          assert "origin" in data and "pointers" in data["origin"], data
+          print("origin-ok", len(data["origin"]["pointers"]))
+          '
+          talmudic --root "$tmp" --agent-id ci-agent --session-id ci-session --role tester --model ci-model status demo | grep '"agent_id": "ci-agent"'
+      - name: CLI init (PowerShell)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $tmp = Join-Path $env:RUNNER_TEMP ("talmudic-" + [guid]::NewGuid().ToString())
+          New-Item -ItemType Directory -Path $tmp | Out-Null
+          $init = talmudic --root $tmp --agent-id ci-agent --session-id ci-session --role tester --model ci-model init demo --task "CI" --next "continue" | Out-String
+          if ($init -notmatch '"origin"') { throw "expected origin on init" }
+          $status = talmudic --root $tmp --agent-id ci-agent --session-id ci-session --role tester --model ci-model status demo | Out-String
+          if ($status -notmatch '"agent_id": "ci-agent"') { throw "expected current actor" }
+
+  claude-plugin-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Verify Claude Code CLI
+        run: claude --version
+      - name: Add local checkout as marketplace
+        run: claude plugin marketplace add ./
+      - name: Install Talmudic plugin from local marketplace
+        run: claude plugin install talmudic-memory@talmudic-ai-memory
+      - name: Verify plugin is registered
+        run: claude plugin list | grep -i talmudic-memory
+      - name: Verify operator slash commands are registered
+        run: |
+          python3 - <<'PY'
+          import re, subprocess, sys
+          details = subprocess.check_output(["claude", "plugin", "details", "talmudic-memory"], text=True)
+          print(details)
+          match = re.search(r"Skills \(\d+\)\s+(.*)", details)
+          if not match:
+              sys.exit("claude plugin details did not list Skills")
+          names = {name.strip() for name in match.group(1).split(",") if name.strip()}
+          need = {"talmudic-remember", "talmudic-recall", "talmudic-status", "talmudic-doctor", "talmudic-init", "talmudic-memory"}
+          missing = need - names
+          if missing:
+              sys.exit(f"missing commands: {sorted(missing)}")
+          if "remember" in names:
+              sys.exit("bare 'remember' command would collide with Claude Memory")
+          print("ok", sorted(names))
+          PY

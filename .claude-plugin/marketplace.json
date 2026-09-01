@@ -1,0 +1,14 @@
+{
+  "name": "talmudic-ai-memory",
+  "owner": {
+    "name": "Talmudic AI Memory"
+  },
+  "plugins": [
+    {
+      "name": "talmudic-memory",
+      "source": ".",
+      "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
+      "version": "0.3.0b1"
+    }
+  ]
+}

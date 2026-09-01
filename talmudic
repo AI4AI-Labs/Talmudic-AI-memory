@@ -1,0 +1,21 @@
+#!/bin/sh
+# Checkout-local CLI. Uses this clone's src, not a pip/site-packages install.
+# Do not honor CURSOR_PLUGIN_ROOT: that can be an older marketplace cache.
+ROOT=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
+TALMUDIC_SRC="$ROOT/src"
+if [ ! -f "$TALMUDIC_SRC/talmudic_memory/__init__.py" ]; then
+  echo "TALMUDIC: expected src/talmudic_memory next to this launcher. Run it from the plugin clone root." >&2
+  exit 1
+fi
+export PYTHONPATH="$TALMUDIC_SRC"
+if command -v python3 >/dev/null 2>&1; then
+  exec python3 -m talmudic_memory.cli "$@"
+fi
+if command -v python >/dev/null 2>&1; then
+  exec python -m talmudic_memory.cli "$@"
+fi
+if command -v py >/dev/null 2>&1; then
+  exec py -3 -m talmudic_memory.cli "$@"
+fi
+echo "TALMUDIC: Python 3.10+ not found. Install Python and ensure python or py -3 is on PATH." >&2
+exit 1
