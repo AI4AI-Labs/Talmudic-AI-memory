@@ -1,0 +1,7 @@
+# Files authored on QA that also belong on PROD, but are not part of the
+# runtime plugin allowlist. Paths are repository-relative.
+docs/PRODUCTION_PROMOTION.md
+docs/ASSAY.md
+scripts/build_production_tree.py
+release/production-files.txt
+release/prod-extra.txt

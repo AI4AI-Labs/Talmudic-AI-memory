@@ -1,0 +1,35 @@
+# Production tree allowlist
+# One repository-relative file or directory per line.
+# Directories are copied recursively. Anything not listed never reaches production.
+# Do not add tests/, examples/, bench, .talmudic/, or lab-only branches.
+
+.claude-plugin
+.cursor-plugin
+.github/workflows/ci.yml
+LICENSE
+README.md
+USER_GUIDE.md
+agents
+commands
+hooks.json
+hooks
+host
+plugin.json
+pyproject.toml
+scripts/cursor_adapter.py
+scripts/cursor_guard.py
+scripts/cursor_hook.py
+scripts/cursor_install_commands.py
+scripts/cursor_observer.py
+scripts/cursor_python.cmd
+scripts/cursor_session_start.py
+scripts/cursor_stop.py
+scripts/install_claude_skill.sh
+scripts/talmudic_guard.py
+scripts/talmudic_hook.py
+scripts/talmudic_observer.py
+scripts/talmudic_stop.py
+skills
+src
+talmudic
+talmudic.cmd

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "python \"${PLUGIN_ROOT}/scripts/talmudic_hook.py\""
+      }
+    ],
+    "preCompact": [
+      {
+        "command": "python \"${PLUGIN_ROOT}/scripts/talmudic_hook.py\""
+      }
+    ],
+    "stop": [
+      {
+        "command": "python \"${PLUGIN_ROOT}/scripts/talmudic_stop.py\""
+      }
+    ]
+  }
+}
