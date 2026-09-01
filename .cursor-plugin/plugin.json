@@ -1,0 +1,23 @@
+{
+  "name": "talmudic-memory",
+  "displayName": "Talmudic AI Memory",
+  "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
+  "version": "0.3.0b1",
+  "author": {
+    "name": "Talmudic AI Memory"
+  },
+  "homepage": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
+  "repository": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
+  "license": "MIT",
+  "keywords": [
+    "immortality",
+    "memory",
+    "hooks",
+    "talmudic",
+    "gemara"
+  ],
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "commands": "commands",
+  "hooks": "./hooks/hooks-cursor.json"
+}
