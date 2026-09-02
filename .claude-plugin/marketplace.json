@@ -7,7 +7,7 @@
     {
       "name": "talmudic-memory",
       "source": ".",
-      "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
+      "description": "Project memory for AI agents. Gemara preserves decisions, why, why-not, and when to reconsider across sessions, models, and IDEs.",
       "version": "0.3.0b1"
     }
   ]
