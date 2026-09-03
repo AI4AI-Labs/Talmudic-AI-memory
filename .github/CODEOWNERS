@@ -1,0 +1,11 @@
+# Production ownership
+* @gilav2
+
+# Security- and release-sensitive surfaces
+.github/workflows/ @gilav2
+.claude-plugin/ @gilav2
+.cursor-plugin/ @gilav2
+scripts/ @gilav2
+src/ @gilav2
+SECURITY.md @gilav2
+PRIVACY.md @gilav2
