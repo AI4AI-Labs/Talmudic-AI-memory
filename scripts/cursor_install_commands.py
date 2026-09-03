@@ -53,7 +53,7 @@ def install_cursor_project_orient_rule(*, plugin_root: Path, project_root: Path)
     if project == plugin:
         return None
     dest = project / ".cursor" / "rules" / "talmudic-orient.mdc"
-    if not _copy_text(plugin / "host" / "cursor" / "talmudic-orient.mdc", dest):
+    if not _copy_text(plugin / "rules" / "talmudic-orient.mdc", dest):
         return None
     return dest.name
 

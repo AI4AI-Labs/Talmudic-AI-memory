@@ -10,10 +10,11 @@ LICENSE
 README.md
 USER_GUIDE.md
 agents
+assets
 commands
 hooks.json
 hooks
-host
+rules
 plugin.json
 pyproject.toml
 scripts/cursor_adapter.py
@@ -25,6 +26,7 @@ scripts/cursor_python.cmd
 scripts/cursor_session_start.py
 scripts/cursor_stop.py
 scripts/install_claude_skill.sh
+scripts/validate_cursor_plugin.py
 scripts/talmudic_guard.py
 scripts/talmudic_hook.py
 scripts/talmudic_observer.py
