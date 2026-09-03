@@ -20,22 +20,21 @@ $ARGUMENTS
 
 Before initialization, determine whether this command is running in Cursor.
 
-If it is Cursor, explicitly tell the operator:
+If it is Cursor, check `.cursor/talmudic.json` before continuing:
 
-> **Cursor project activation:** Cursor currently loads installed plugins beyond a single-project scope. Talmudic therefore requires this project to opt in with `.cursor/talmudic.json` containing `{"enabled": true}`. This marker only scopes the Cursor plugin; it is not Gemara. Talmudic creates and manages `.talmudic/` itself.
+- If it contains `{"enabled": true}`, continue with Init.
+- If it is missing, explain that Cursor currently cannot scope the installed plugin to individual projects, so Talmudic uses this project-level activation marker. Ask the operator for permission to create `.cursor/talmudic.json` with `{"enabled": true}`.
+- If it explicitly contains `{"enabled": false}`, tell the operator Talmudic is disabled for this project and ask permission to change it to `{"enabled": true}`.
 
-Then verify the project is enabled by either:
+Never create or modify the activation marker without explicit operator approval.
 
-- `.cursor/talmudic.json` with `{"enabled": true}`; or
-- an existing `.talmudic/` directory from a previously initialized project.
+If the operator approves, create or update the marker, tell the operator to start a **new Cursor Agent session** so the project hooks activate, then stop Init. The operator should rerun `/talmudic-init` in the new session.
 
-If neither exists, **do not silently initialize**. Tell the operator to create `.cursor/talmudic.json` with `{"enabled": true}`, start a new Cursor Agent session so the hooks activate, and invoke `/talmudic-init` again.
+If the operator declines, stop Init without changing the project.
 
-If `.cursor/talmudic.json` explicitly contains `{"enabled": false}`, stop and tell the operator that Talmudic is disabled for this project even if `.talmudic/` remains.
+Do **not** ask the operator to create `.talmudic/` manually. Talmudic creates and manages that runtime directory itself.
 
-Do **not** ask the operator to create `.talmudic/` manually.
-
-This notice is Cursor-specific. Do not require `.cursor/talmudic.json` when running under Claude Code or another host.
+This activation check is Cursor-specific. Do not require `.cursor/talmudic.json` when running under Claude Code or another host.
 
 ## Runtime
 
