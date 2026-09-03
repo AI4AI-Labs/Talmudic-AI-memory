@@ -1,9 +1,18 @@
 {
   "name": "talmudic-memory",
-  "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
+  "description": "Persistent project memory for AI coding agents. Preserves decisions, rationale, rejected alternatives, reopen conditions, and work state across sessions, models, and IDEs.",
   "version": "0.3.0b1",
   "author": {
     "name": "Talmudic AI Memory"
   },
-  "repository": "https://github.com/AI4AI-Labs/talmudic-ai-memory"
+  "repository": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
+  "displayName": "Talmudic AI Memory",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "ai-agents",
+    "project-memory",
+    "continuity",
+    "coding-agents"
+  ]
 }
