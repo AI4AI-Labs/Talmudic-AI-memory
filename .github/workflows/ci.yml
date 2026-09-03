@@ -59,6 +59,8 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
+      - name: Validate Cursor plugin manifest
+        run: python scripts/validate_cursor_plugin.py
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code@2.1.258
       - name: Verify Claude Code CLI

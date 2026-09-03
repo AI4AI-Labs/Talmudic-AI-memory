@@ -16,6 +16,7 @@
       "homepage": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
       "repository": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
       "license": "MIT",
+      "logo": "assets/talmudic_memory.png",
       "keywords": [
         "immortality",
         "memory",
@@ -25,7 +26,8 @@
       ],
       "skills": "./skills/",
       "agents": "./agents/",
-      "commands": "commands",
+      "commands": "./commands/",
+      "rules": "./rules/",
       "hooks": "./hooks/hooks-cursor.json"
     }
   ]
