@@ -48,7 +48,11 @@ Restart/start a fresh Claude Code session.
 
 Requirements: Python 3.10+ as `python`, `python3`, or Windows `py -3`.
 
-## Opt in a product project
+## Enable Talmudic in a Cursor project
+
+> **Required for Cursor:** plugin installation alone does not activate Talmudic in a project.
+
+Cursor currently loads installed plugins beyond a single-project scope. To keep Talmudic hooks from running in unrelated repositories, the Cursor adapter requires a project-level activation marker. This is a **Cursor scoping safeguard**, not part of the Gemara format.
 
 Create:
 
@@ -62,11 +66,15 @@ with:
 {"enabled": true}
 ```
 
-Start a **new** session, then run:
+Start a **new Cursor Agent session**, then run:
 
 ```text
 /talmudic-init
 ```
+
+Talmudic creates and manages `.talmudic/` automatically. **Do not create `.talmudic/` manually.** Existing initialized projects with that directory remain active; an explicit `{"enabled": false}` marker disables Talmudic even if the directory remains.
+
+This activation file is Cursor-specific; Claude Code does not require it.
 
 Init maps the project through pointers such as README/architecture paths and asks before seeding decisions. It is not a repository dump. If an old note says `/talmudic-origin`, that is this command — do not repeat the old name.
 
