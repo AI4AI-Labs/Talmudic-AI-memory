@@ -18,6 +18,26 @@ Updates: Dashboard → Plugins → **Refresh** (or Auto Refresh). Cursor caches 
 
 Python 3.10+ as `python`, `python3`, or Windows `py -3`.
 
+## Required: enable Talmudic for this project
+
+Installing the Cursor plugin does **not** activate Talmudic in every repository. Cursor currently loads an installed plugin beyond a single-project scope, so Talmudic deliberately makes its hooks no-op unless the current project explicitly enables them.
+
+Create this file in each Cursor project where Talmudic should run:
+
+```text
+.cursor/talmudic.json
+```
+
+```json
+{"enabled": true}
+```
+
+Then open a **new Agent session** and run `/talmudic-init`.
+
+This marker is only a **Cursor scoping safeguard**. It is not Gemara and it is not the memory store. Talmudic creates and manages `.talmudic/` itself — **do not create that directory manually**.
+
+Already-initialized projects with `.talmudic/` remain active for compatibility. An explicit `{"enabled": false}` wins over a leftover `.talmudic/` directory.
+
 ## Commands
 
 `/talmudic-init`, `/talmudic-remember`, `/talmudic-recall`, `/talmudic-status`, and `/talmudic-doctor` operate on project Gemara. A host `/remember` command is not the same thing.
