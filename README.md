@@ -314,6 +314,13 @@ The core continuity mechanics, cross-agent retrieval path, bounded-fetch archite
 
 We would rather publish the boundary of the evidence than turn a smoke test into a marketing number.
 
+## Security and privacy
+
+- [Security policy](SECURITY.md) — report vulnerabilities privately; do not use public issues.
+- [Privacy policy](PRIVACY.md) — local-first storage, Git synchronization, and data-handling boundaries.
+- [Contributing](CONTRIBUTING.md) — development and pull-request expectations.
+- [Code of Conduct](CODE_OF_CONDUCT.md) — participation standards.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

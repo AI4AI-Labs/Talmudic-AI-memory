@@ -5,3 +5,12 @@ docs/ASSAY.md
 scripts/build_production_tree.py
 release/production-files.txt
 release/prod-extra.txt
+SECURITY.md
+PRIVACY.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+.github/CODEOWNERS
+.github/dependabot.yml
+.github/pull_request_template.md
+.github/ISSUE_TEMPLATE/bug_report.yml
+.github/ISSUE_TEMPLATE/config.yml
