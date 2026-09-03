@@ -16,6 +16,27 @@ Operator argument (optional workstream id):
 
 $ARGUMENTS
 
+## Cursor activation notice
+
+Before initialization, determine whether this command is running in Cursor.
+
+If it is Cursor, explicitly tell the operator:
+
+> **Cursor project activation:** Cursor currently loads installed plugins beyond a single-project scope. Talmudic therefore requires this project to opt in with `.cursor/talmudic.json` containing `{"enabled": true}`. This marker only scopes the Cursor plugin; it is not Gemara. Talmudic creates and manages `.talmudic/` itself.
+
+Then verify the project is enabled by either:
+
+- `.cursor/talmudic.json` with `{"enabled": true}`; or
+- an existing `.talmudic/` directory from a previously initialized project.
+
+If neither exists, **do not silently initialize**. Tell the operator to create `.cursor/talmudic.json` with `{"enabled": true}`, start a new Cursor Agent session so the hooks activate, and invoke `/talmudic-init` again.
+
+If `.cursor/talmudic.json` explicitly contains `{"enabled": false}`, stop and tell the operator that Talmudic is disabled for this project even if `.talmudic/` remains.
+
+Do **not** ask the operator to create `.talmudic/` manually.
+
+This notice is Cursor-specific. Do not require `.cursor/talmudic.json` when running under Claude Code or another host.
+
 ## Runtime
 
 Use `.talmudic/runtime.json` → `command` (`.\.talmudic\talmudic.cmd` on Windows PowerShell, `.talmudic/talmudic` on Unix). Do **not** run `python -m talmudic_memory.cli` or a global `talmudic` — they can be an older pip install.
