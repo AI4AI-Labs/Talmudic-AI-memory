@@ -239,21 +239,35 @@ claude plugin install talmudic-memory@talmudic-ai-memory
 
 Start/restart Claude Code after installation.
 
-### Initialize a project
+### Enable Talmudic in a Cursor project
 
-Opt a **product repo** in with `.cursor/talmudic.json`:
+> **Required for Cursor:** installing the plugin does not automatically activate Talmudic in every repository.
+
+Cursor currently loads an installed plugin beyond a single-project scope. Talmudic therefore uses a small project-level activation marker so its hooks **no-op in repositories that did not explicitly enable it**. This is a Cursor scoping safeguard, not part of the Gemara storage format.
+
+In each Cursor project where you want Talmudic active, create:
+
+```text
+.cursor/talmudic.json
+```
+
+with:
 
 ```json
 {"enabled": true}
 ```
 
-Start a new session and run:
+Then start a **new Cursor Agent session** and run:
 
 ```text
 /talmudic-init
 ```
 
-Init maps the project/workstream through pointers and asks before seeding project reasoning. It does **not** ingest the repository as a giant memory dump.
+Init creates/manages the local `.talmudic/` runtime state, maps the project/workstream through pointers, and asks before seeding project reasoning. It does **not** ingest the repository as a giant memory dump.
+
+**Do not create `.talmudic/` manually.** Existing `.talmudic/` also activates Talmudic for compatibility with already-initialized projects; an explicit `{"enabled": false}` marker disables it.
+
+This activation marker is **Cursor-specific**. Claude Code does not require `.cursor/talmudic.json`.
 
 Do not run `/talmudic-init` on the Talmudic plugin repository itself.
 
