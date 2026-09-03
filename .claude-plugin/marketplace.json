@@ -7,8 +7,17 @@
     {
       "name": "talmudic-memory",
       "source": ".",
-      "description": "Git-backed project memory for AI coding agents. Stores decisions, rationale, rejected alternatives, reopen conditions, and work state for retrieval across sessions, models, and IDEs.",
-      "version": "0.3.0b1"
+      "description": "Persistent project memory for AI coding agents. Preserves decisions, rationale, rejected alternatives, reopen conditions, and work state across sessions, models, and IDEs.",
+      "version": "0.3.0b1",
+      "category": "development",
+      "tags": [
+        "memory",
+        "ai-agents",
+        "project-memory",
+        "continuity",
+        "coding-agents"
+      ]
     }
-  ]
+  ],
+  "description": "Persistent project memory for AI coding agents, preserving project decisions and reasoning across sessions, models, and IDEs."
 }
