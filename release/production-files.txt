@@ -11,6 +11,7 @@ README.md
 USER_GUIDE.md
 agents
 assets
+claude
 commands
 hooks
 rules

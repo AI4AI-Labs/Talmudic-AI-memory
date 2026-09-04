@@ -10,7 +10,7 @@ Gemara remembers **what was decided, why, why not, and when to reconsider it**.
 
 Git remembers what changed. Built-in agent memory remembers the user and conversation. **Gemara remembers what the project learned.**
 
-Beta **0.3.0b1** · Cursor + Claude Code · Git-backed · model-agnostic · MIT  
+Beta **0.3.0b1** · Cursor + Claude Code · Git-backed · model-agnostic · Apache-2.0  
 Day-to-day usage: [USER_GUIDE.md](USER_GUIDE.md) · Evidence: [docs/ASSAY.md](docs/ASSAY.md)
 
 ---
@@ -323,4 +323,4 @@ We would rather publish the boundary of the evidence than turn a smoke test into
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Apache-2.0. See [LICENSE](LICENSE).

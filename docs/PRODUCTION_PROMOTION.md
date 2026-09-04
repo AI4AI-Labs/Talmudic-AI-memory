@@ -53,7 +53,7 @@ Runtime plugin + CLI only:
 
 - `.claude-plugin`, `.cursor-plugin`, `plugin.json`
 - `src`, `talmudic`, `talmudic.cmd`, listed `scripts/cursor_*` and `scripts/talmudic_*`
-- `agents`, `commands`, `hooks` (`hooks-claude.json`, `hooks-cursor.json`; no root `hooks.json`), `rules`, `skills`
+- `agents`, `commands`, `claude` (`hooks-claude.json`), `hooks` (Cursor-only `hooks-cursor.json`; no root `hooks.json`), `rules`, `skills`
 - `README.md`, `USER_GUIDE.md`, `LICENSE`, `pyproject.toml`
 - `.github/workflows/ci.yml`
 
