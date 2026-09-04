@@ -31,7 +31,7 @@ These are project-intelligence commands. Claude's own `/remember` / Memory is a 
 
 ## Hook mapping
 
-Claude's manifest must use `hooks/hooks-claude.json` (not root `hooks.json` or `hooks/hooks.json`).
+Claude's manifest must use `claude/hooks-claude.json` (not root `hooks.json`, `hooks/hooks.json`, or `hooks/hooks-claude.json`).
 
 | Claude event | Script | Behavior |
 |---|---|---|
