@@ -67,8 +67,23 @@ jobs:
         run: claude --version
       - name: Add local checkout as marketplace
         run: claude plugin marketplace add ./
-      - name: Install Talmudic plugin from local marketplace
-        run: claude plugin install talmudic-memory@talmudic-ai-memory
+      - name: Validate Claude plugin layout
+        run: |
+          claude plugin validate .
+          claude plugin install talmudic-memory@talmudic-ai-memory
+          python3 - <<'PY'
+          import re, subprocess, sys
+          details = subprocess.check_output(["claude", "plugin", "details", "talmudic-memory"], text=True)
+          print(details)
+          match = re.search(r"Hooks \((\d+)\)", details)
+          if not match or match.group(1) != "6":
+              sys.exit(f"expected Hooks (6), got: {match.group(0) if match else 'missing'}")
+          need = {"SessionStart", "PreToolUse", "PostToolUse", "PreCompact", "Stop", "SessionEnd"}
+          missing = {event for event in need if event not in details}
+          if missing:
+              sys.exit(f"missing Claude hook events: {sorted(missing)}")
+          print("claude-hooks-ok", sorted(need))
+          PY
       - name: Verify plugin is registered
         run: claude plugin list | grep -i talmudic-memory
       - name: Verify operator slash commands are registered

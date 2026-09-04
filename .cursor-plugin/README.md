@@ -58,7 +58,7 @@ Cursor may copy the Talmudic command templates into the opened project's `.curso
 | `subagentStop` | `cursor_observer.py` | One-line follow-up suggestion |
 | `stop` | `cursor_stop.py` | Bounded stop handling; loop limit 5 |
 
-Cursor's manifest must use `hooks/hooks-cursor.json`; Claude Code's `hooks/hooks.json` uses a different host schema.
+Cursor's manifest must use `hooks/hooks-cursor.json`. Claude Code's manifest must use `hooks/hooks-claude.json`. Do not ship root `hooks.json` or a default `hooks/hooks.json` — marketplace scanners treat those as Cursor bait.
 
 ## Cloud agents
 

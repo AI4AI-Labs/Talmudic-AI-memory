@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / ".cursor-plugin" / "plugin.json"
 MARKETPLACE = ROOT / ".cursor-plugin" / "marketplace.json"
 HOOKS = ROOT / "hooks" / "hooks-cursor.json"
+CLAUDE_HOOKS = ROOT / "hooks" / "hooks-claude.json"
 EXPECTED_COMMANDS = {
     "talmudic-doctor",
     "talmudic-init",
@@ -19,6 +20,10 @@ EXPECTED_COMMANDS = {
     "talmudic-status",
 }
 FORBIDDEN_COMMANDS = {"talmudic-origin"}
+SCANNER_BAIT = (
+    ROOT / "hooks.json",
+    ROOT / "hooks" / "hooks.json",
+)
 
 
 def die(msg: str) -> None:
@@ -41,6 +46,10 @@ def assert_path_exists(path: Path) -> None:
 
 
 def main() -> int:
+    for bait in SCANNER_BAIT:
+        if bait.is_file():
+            die(f"scanner bait must not ship: {rel(bait)}")
+
     manifest = load_json(MANIFEST)
     marketplace = load_json(MARKETPLACE)
 
@@ -52,6 +61,9 @@ def main() -> int:
     for key in ("skills", "agents", "commands", "rules", "hooks", "logo"):
         if key not in plugin_entry:
             die(f".cursor-plugin/marketplace.json plugin entry missing: {key}")
+
+    if manifest.get("hooks") != "./hooks/hooks-cursor.json":
+        die("Cursor manifest must point at ./hooks/hooks-cursor.json")
 
     logo = ROOT / manifest["logo"]
     assert_path_exists(logo)
@@ -74,10 +86,12 @@ def main() -> int:
 
     if not HOOKS.is_file():
         die("hooks/hooks-cursor.json is required for Cursor packaging")
-    if (ROOT / "hooks" / "hooks.json").is_file():
-        hooks_cursor = json.loads(HOOKS.read_text(encoding="utf-8"))
-        if "hooks" not in hooks_cursor:
-            die("hooks-cursor.json must declare Cursor hook events")
+    hooks_cursor = json.loads(HOOKS.read_text(encoding="utf-8"))
+    if "hooks" not in hooks_cursor:
+        die("hooks-cursor.json must declare Cursor hook events")
+
+    if not CLAUDE_HOOKS.is_file():
+        die("hooks/hooks-claude.json is required for Claude packaging")
 
     print(
         "cursor-plugin-ok",
