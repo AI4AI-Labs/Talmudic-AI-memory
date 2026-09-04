@@ -21,5 +21,5 @@
   "agents": "./agents/",
   "commands": "./commands/",
   "rules": "./rules/",
-  "hooks": "./hooks/hooks-cursor.json"
+  "hooks": "./cursor/hooks-cursor.json"
 }

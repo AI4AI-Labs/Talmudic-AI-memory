@@ -13,7 +13,7 @@ agents
 assets
 claude
 commands
-hooks
+cursor
 rules
 plugin.json
 pyproject.toml
