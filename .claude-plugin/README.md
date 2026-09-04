@@ -31,6 +31,8 @@ These are project-intelligence commands. Claude's own `/remember` / Memory is a 
 
 ## Hook mapping
 
+Claude's manifest must use `hooks/hooks-claude.json` (not root `hooks.json` or `hooks/hooks.json`).
+
 | Claude event | Script | Behavior |
 |---|---|---|
 | `SessionStart` | `talmudic_hook.py` | Bootstrap + **index pointer**, not Gemara dump |

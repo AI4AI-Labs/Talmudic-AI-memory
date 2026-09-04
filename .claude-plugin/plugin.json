@@ -14,5 +14,6 @@
     "project-memory",
     "continuity",
     "coding-agents"
-  ]
+  ],
+  "hooks": "./hooks/hooks-claude.json"
 }
