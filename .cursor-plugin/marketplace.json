@@ -28,7 +28,7 @@
       "agents": "./agents/",
       "commands": "./commands/",
       "rules": "./rules/",
-      "hooks": "./cursor/hooks-cursor.json"
+      "hooks": "./hooks/hooks.json"
     }
   ]
 }

@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / ".cursor-plugin" / "plugin.json"
 MARKETPLACE = ROOT / ".cursor-plugin" / "marketplace.json"
-HOOKS = ROOT / "cursor" / "hooks-cursor.json"
+HOOKS = ROOT / "hooks" / "hooks.json"
 CLAUDE_HOOKS = ROOT / "claude" / "hooks-claude.json"
 EXPECTED_COMMANDS = {
     "talmudic-doctor",
@@ -22,8 +22,7 @@ EXPECTED_COMMANDS = {
 FORBIDDEN_COMMANDS = {"talmudic-origin"}
 SCANNER_BAIT = (
     ROOT / "hooks.json",
-    ROOT / "hooks",
-    ROOT / "hooks" / "hooks.json",
+    ROOT / "cursor",
     ROOT / "hooks" / "hooks-claude.json",
     ROOT / "hooks" / "hooks-cursor.json",
 )
@@ -65,8 +64,8 @@ def main() -> int:
         if key not in plugin_entry:
             die(f".cursor-plugin/marketplace.json plugin entry missing: {key}")
 
-    if manifest.get("hooks") != "./cursor/hooks-cursor.json":
-        die("Cursor manifest must point at ./cursor/hooks-cursor.json")
+    if manifest.get("hooks") != "./hooks/hooks.json":
+        die("Cursor manifest must point at ./hooks/hooks.json")
 
     logo = ROOT / manifest["logo"]
     assert_path_exists(logo)
@@ -88,16 +87,16 @@ def main() -> int:
         die("retired talmudic-origin command must not ship")
 
     if not HOOKS.is_file():
-        die("cursor/hooks-cursor.json is required for Cursor packaging")
+        die("hooks/hooks.json is required for Cursor packaging")
     hooks_cursor = json.loads(HOOKS.read_text(encoding="utf-8"))
     if "hooks" not in hooks_cursor:
-        die("hooks-cursor.json must declare Cursor hook events")
+        die("hooks/hooks.json must declare Cursor hook events")
 
-    cursor_dir_files = sorted(
-        p.name for p in (ROOT / "cursor").iterdir() if p.is_file()
-    ) if (ROOT / "cursor").is_dir() else []
-    if cursor_dir_files != ["hooks-cursor.json"]:
-        die(f"cursor/ must be Cursor-only (hooks-cursor.json); found: {cursor_dir_files}")
+    hooks_dir_files = sorted(
+        p.name for p in (ROOT / "hooks").iterdir() if p.is_file()
+    ) if (ROOT / "hooks").is_dir() else []
+    if hooks_dir_files != ["hooks.json"]:
+        die(f"hooks/ must be Cursor-only (hooks.json); found: {hooks_dir_files}")
 
     if not CLAUDE_HOOKS.is_file():
         die("claude/hooks-claude.json is required for Claude packaging")
@@ -113,6 +112,7 @@ def main() -> int:
         f"commands={len(command_names)}",
         f"rules={len(rule_files)}",
         f"logo={rel(logo)}",
+        f"hooks={rel(HOOKS)}",
     )
     return 0
 
