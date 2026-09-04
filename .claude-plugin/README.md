@@ -9,7 +9,7 @@ For the product model and benchmark evidence, see [../README.md](../README.md). 
 ## Install
 
 ```bash
-claude plugin marketplace add AI4AI-Labs/talmudic-ai-memory
+claude plugin marketplace add AI4AI-Labs/Talmudic-AI-memory
 claude plugin install talmudic-memory@talmudic-ai-memory --scope project
 ```
 
@@ -31,8 +31,6 @@ These are project-intelligence commands. Claude's own `/remember` / Memory is a 
 
 ## Hook mapping
 
-Claude's manifest must use `claude/hooks-claude.json` (not root `hooks.json`, `hooks/hooks.json`, or `hooks/hooks-claude.json`).
-
 | Claude event | Script | Behavior |
 |---|---|---|
 | `SessionStart` | `talmudic_hook.py` | Bootstrap + **index pointer**, not Gemara dump |
@@ -40,6 +38,8 @@ Claude's manifest must use `claude/hooks-claude.json` (not root `hooks.json`, `h
 | `PreToolUse Bash` | `talmudic_guard.py` + observer | Fail-closed material-write guard |
 | `PostToolUse` | `talmudic_observer.py` | Observe continuity-relevant boundaries |
 | `Stop` | `talmudic_stop.py` | Bounded one-line Remember discipline |
+
+Hook config is `claude/hooks-claude.json`, declared from `.claude-plugin/plugin.json`. It must not live under `hooks/` (Cursor scanners glob that directory). `hooks/hooks.json` and a root `hooks.json` must not exist — both hosts auto-load that default name, so Cursor schema there would run on Claude. Do not put hook JSON inside `.claude-plugin/` — that directory is the manifest only.
 
 The nudge is intentionally small: `Talmudic: Remember this if a future agent would miss it.`
 

@@ -4,8 +4,8 @@
 Cursor's plugin `commands` field often does not refresh the `/` menu. Project
 `.cursor/commands/*.md` files do. Plugin-packaged alwaysApply rules are dropped;
 project `.cursor/rules/talmudic-orient.mdc` is included at composer create. That
-rule says Gemara is indexed: search it (`orient` / `recall`); do not run
-`digest`. Both copies are local host machinery, not Gemara.
+rule says Gemara is indexed: first move is `orient` / `recall`. Both copies
+are local host machinery, not Gemara.
 """
 
 from __future__ import annotations

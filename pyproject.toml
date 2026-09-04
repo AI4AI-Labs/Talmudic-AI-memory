@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "talmudic-memory"
 version = "0.3.0b1"
 description = "Resumable work-state memory for long-running AI agents."
+license = {text = "Apache-2.0"}
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{name = "Talmudic AI Memory contributors"}]
