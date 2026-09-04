@@ -1,6 +1,8 @@
 # Talmudic Memory — User Guide
 
-**The agent dies. The work is immortal.**
+> **The agent dies. The work is immortal.**
+
+**Talmudic** names the reasoning shape (premise → dispute → ruling → reopen-if). It is infrastructure, not religious content.
 
 Decision archaeology for coding agents.
 
@@ -86,7 +88,7 @@ Do **not** init-map the Talmudic plugin repository itself.
 new task / new agent
         │
         ▼
-SessionStart: "Talmudic Memory is active"
+SessionStart: "Talmudic Memory is active" — leftover not a mandate; Gemara is why and how; first move is launcher then orient "<task>" / recall "<question>"
         │
         ▼
 search index for THIS task

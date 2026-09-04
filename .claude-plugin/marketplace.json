@@ -3,24 +3,29 @@
   "owner": {
     "name": "Talmudic AI Memory"
   },
+  "description": "Persistent project memory for coding agents. Preserves decisions, rationale, rejected alternatives, reopen conditions, and work state so agents can resume projects without reconstructing context from scratch.",
   "plugins": [
     {
       "name": "talmudic-memory",
+      "displayName": "Talmudic AI Memory",
       "source": ".",
-      "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
+      "description": "Persistent project memory for coding agents. Preserves decisions, rationale, rejected alternatives, reopen conditions, and work state so agents can resume projects without reconstructing context from scratch.",
       "version": "0.3.0b1",
+      "homepage": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
+      "repository": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
+      "license": "Apache-2.0",
       "category": "development",
       "tags": [
+        "immortality",
         "memory",
+        "hooks",
+        "talmudic",
+        "gemara",
         "ai-agents",
         "project-memory",
         "continuity",
         "coding-agents"
       ]
     }
-  ],
-  "metadata": {
-    "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
-    "version": "0.3.0b1"
-  }
+  ]
 }

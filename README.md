@@ -2,6 +2,8 @@
 
 > **The agent dies. The work is immortal.**
 
+**Talmudic** names the reasoning shape — premise → dispute → ruling → reopen-if. It is infrastructure for project judgment, not religious content.
+
 **Agents are temporary. Project intelligence should compound.**
 
 Talmudic gives an AI-built project a **Gemara**: durable project judgment that survives the agent, session, model, and IDE that produced it.
@@ -42,7 +44,7 @@ A future agent can often inspect the code and infer why the selected implementat
 
 **Why-not is project intelligence.**
 
-## One Sugya
+## Sugya = a structured decision record (Talmud-style reasoning unit)
 
 A **Sugya** is one recorded argument, not a transcript.
 
@@ -124,6 +126,18 @@ POPULATE PASS  →  RESUME PASS
 ```
 
 A deliberately planted rejected-path trap makes the distinction observable: the replacement agent should find the recorded reasoning and refuse the stale proposal because of **project history**, not because it happens to reason its way to the same answer again.
+
+Hard numbers from [docs/ASSAY.md](docs/ASSAY.md) — not invented marketing stats:
+
+| Measurement | Result |
+|---|---|
+| Two-agent smoke (Chat A dies → Chat B) | `POPULATE PASS` → `RESUME PASS` |
+| SessionStart pointer (10 / 50 / 150 Sugyot) | **237 tokens, flat** |
+| Targeted `orient` fetch (same sizes) | **2,065 tokens, flat**; planted rejection still found |
+| Full `digest` dump (same sizes) | **488 → 2,047 → 5,886** (grows with history) |
+| Cloud killpoint (new session, no handoff) | Recovered In-Flight as **RECOVERED**; did **not** re-run an already-applied migration |
+
+Gold is `FETCH BOUNDED`: the map stays small while a dump does not. At a tiny corpus a dump can still be cheaper than one fetch — that caveat is in the assay.
 
 ### Bounded retrieval as Gemara grows
 
@@ -303,6 +317,7 @@ If not, don't preserve it.
 ## Documentation
 
 - **[User Guide](USER_GUIDE.md)** — install, opt-in, daily workflow, commands.
+- **[Thesis](docs/THESIS.md)** — why the name, origin, and what we are not calling this.
 - **[Cursor adapter](.cursor-plugin/README.md)** — Cursor-specific hooks and cloud behavior.
 - **[Claude Code adapter](.claude-plugin/README.md)** — Claude-specific installation and hook mapping.
 
@@ -314,13 +329,6 @@ The core continuity mechanics, cross-agent retrieval path, bounded-fetch archite
 
 We would rather publish the boundary of the evidence than turn a smoke test into a marketing number.
 
-## Security and privacy
-
-- [Security policy](SECURITY.md) — report vulnerabilities privately; do not use public issues.
-- [Privacy policy](PRIVACY.md) — local-first storage, Git synchronization, and data-handling boundaries.
-- [Contributing](CONTRIBUTING.md) — development and pull-request expectations.
-- [Code of Conduct](CODE_OF_CONDUCT.md) — participation standards.
-
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE).
+Apache 2.0. See [LICENSE](LICENSE).
