@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 SESSION_START_POINTER = (
-    "Talmudic Memory is active. This project has a Gemara: indexed canonical "
+    "Talmudic Memory is active. You inherit this handoff, and it's yours to keep current. "
+    "This project has a Gemara: indexed canonical "
     "continuity (Sugyot, Resume, breadcrumbs). It is not Claude Memory. "
     "Repo files can lie; Gemara is current. "
     "SessionStart synchronized the shared Gemara when available and ran change-aware preflight. "

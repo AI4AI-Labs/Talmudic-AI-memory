@@ -4,22 +4,27 @@
     "name": "Talmudic AI Memory"
   },
   "metadata": {
-    "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
+    "description": "Persistent project memory for AI coding agents. Preserves decisions, rationale, rejected alternatives, reopen conditions, and work state across sessions, models, and IDEs.",
     "version": "0.3.0b1"
   },
   "plugins": [
     {
       "name": "talmudic-memory",
+      "displayName": "Talmudic AI Memory",
       "source": "./",
-      "description": "The agent dies. The work is immortal. Share the project's why and why-not.",
+      "description": "Persistent project memory for AI coding agents. Preserves decisions, rationale, rejected alternatives, reopen conditions, and work state across sessions, models, and IDEs.",
       "version": "0.3.0b1",
       "homepage": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
       "repository": "https://github.com/AI4AI-Labs/talmudic-ai-memory",
       "license": "Apache-2.0",
       "logo": "assets/talmudic_memory.png",
       "keywords": [
-        "immortality",
         "memory",
+        "ai-agents",
+        "project-memory",
+        "continuity",
+        "coding-agents",
+        "immortality",
         "hooks",
         "talmudic",
         "gemara"
@@ -28,7 +33,7 @@
       "agents": "./agents/",
       "commands": "./commands/",
       "rules": "./rules/",
-      "hooks": "./cursor/hooks-cursor.json"
+      "hooks": "./hooks/hooks-cursor.json"
     }
   ]
 }

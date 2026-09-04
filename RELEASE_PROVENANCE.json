@@ -1,314 +1,363 @@
 {
-  "schema": "bootstrap-1",
-  "product": "Talmudic AI Memory",
-  "thesis": "The agent dies. The work is immortal.",
-  "version": "0.3.0b1",
-  "source_repository": "gilav2/Talmudic-AI-memory",
-  "source_branch": "main",
-  "source_sha": "0e59b504df3a22070941e8b69f4e4530436c8cf2",
-  "target_repository": "AI4AI-Labs/Talmudic-AI-memory",
-  "promotion_branch": "promote/v0.3.0b1-0e59b504df3a",
-  "bootstrap_note": "First production bootstrap. File integrity is recorded with Git blob object IDs; subsequent automated promotions emit per-file SHA-256 via scripts/build_production_tree.py.",
   "files": [
     {
-      "path": ".claude-plugin/marketplace.json",
-      "git_blob_sha": "6b1c43d6f9f445c7afbd030c40f15a5106a64b90",
-      "bytes": 298
-    },
-    {
-      "path": ".claude-plugin/plugin.json",
-      "git_blob_sha": "696e3322c026dd75e3892f15590b6d63642e7b63",
-      "bytes": 271
-    },
-    {
+      "bytes": 2312,
       "path": ".claude-plugin/README.md",
-      "git_blob_sha": "8fef990c3db1f0e4d7377358afcbcf4981586d73",
-      "bytes": 2182
+      "sha256": "c59b7c802e261c5a66dc9956868b9650f6061c3b97b01f78ae948a17a339b1fd"
     },
     {
-      "path": ".cursor-plugin/marketplace.json",
-      "git_blob_sha": "68fc89d71d976045ba99a1e53d03c30432d07b97",
-      "bytes": 864
+      "bytes": 956,
+      "path": ".claude-plugin/marketplace.json",
+      "sha256": "270d57c6b28dc680b6f2e966cf51ebd62b24efa922642157a43c2190135a92fa"
     },
     {
-      "path": ".cursor-plugin/plugin.json",
-      "git_blob_sha": "209d7bf9325c73e7e3d982ef730b159895f45ae7",
-      "bytes": 608
+      "bytes": 649,
+      "path": ".claude-plugin/plugin.json",
+      "sha256": "ff1090b249c2ba3a104a40cc0b12b5e40c1614f3b3554ece0601b28753c53265"
     },
     {
+      "bytes": 3832,
       "path": ".cursor-plugin/README.md",
-      "git_blob_sha": "88410549ac6580543456d335af9abd2a0b91eabb",
-      "bytes": 2846
+      "sha256": "2106da2f96295c2171f03873e4426e1932479b2cf118ab17d727f41e3afe7a17"
     },
     {
+      "bytes": 1276,
+      "path": ".cursor-plugin/marketplace.json",
+      "sha256": "a9315a8f2ee4bd8674ae1a14dde5045cfc0a72e79f190c306e7f3573680e55d2"
+    },
+    {
+      "bytes": 856,
+      "path": ".cursor-plugin/plugin.json",
+      "sha256": "66ad47b3b5e6fbc1ade6870e3575976d9362752e1c981f1b396623a29a03efb6"
+    },
+    {
+      "bytes": 221,
+      "path": ".github/CODEOWNERS",
+      "sha256": "e5785b3ff78c59a1b181c07458234dcaad92670aa388da68258dc3ff8725550b"
+    },
+    {
+      "bytes": 928,
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "sha256": "84f6dae461a9a99396be886a56e98b3e8e72923a7407e3a645b3f18916001fb4"
+    },
+    {
+      "bytes": 222,
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "a2dcfef675fdac6f7c2d0d6af5908d476ff96f44a3a1e85d039f68aeb9adc06b"
+    },
+    {
+      "bytes": 295,
+      "path": ".github/dependabot.yml",
+      "sha256": "225be6b1b99cd3d8033945865f36733b9dd2a7e5ee1447a2b6bdd2d6ba700f30"
+    },
+    {
+      "bytes": 329,
+      "path": ".github/pull_request_template.md",
+      "sha256": "5107b589c08a0b71d7d2320562398aae67139cc56d56b345177e18feee3307ac"
+    },
+    {
+      "bytes": 4822,
       "path": ".github/workflows/ci.yml",
-      "git_blob_sha": "813febf2081ca316d143add03f0b7431a0a99635",
-      "bytes": 3760
+      "sha256": "0e6ad867ee46be8da02a6a651a0033bcbc074eef346e652f1030de6ac8313bd9"
     },
     {
+      "bytes": 6028,
       "path": ".github/workflows/promote-from-qa.yml",
-      "git_blob_sha": "193e3fa0473b4ddbe532915364771d3d5ca54275",
-      "bytes": 6028
+      "sha256": "434ceff1bed340d68c43ae1edd9a93684271cf84f7faeda8fdf4b8cbe4d48b09"
     },
     {
-      "path": "agents/talmudic-scribe.md",
-      "git_blob_sha": "6a63cab77513a28013aec96c2d4bc33213b28efd",
-      "bytes": 1997
+      "bytes": 905,
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "7b0c80c0371f65d1e6c0c8e981880b3e597f3f1964e4f0b359099443521d9a51"
     },
     {
-      "path": "commands/talmudic-doctor.md",
-      "git_blob_sha": "44ffafb5dec64b25a0501e51b5a6c8da4f16e7ee",
-      "bytes": 1028
+      "bytes": 1551,
+      "path": "CONTRIBUTING.md",
+      "sha256": "45f9b251c61cee153473bb069d4617d98b33c66972f3c9dc228e89316e698dc4"
     },
     {
-      "path": "commands/talmudic-init.md",
-      "git_blob_sha": "ffaa5f4979ca0fb36ebc3d7e2756ff8eddae8e96",
-      "bytes": 4161
-    },
-    {
-      "path": "commands/talmudic-recall.md",
-      "git_blob_sha": "ca8dd61f7cad313d7c0dafdf7dcb3e190690626b",
-      "bytes": 1056
-    },
-    {
-      "path": "commands/talmudic-remember.md",
-      "git_blob_sha": "ae0497c5819a70f79b180cdb626813a026d1d72e",
-      "bytes": 1797
-    },
-    {
-      "path": "commands/talmudic-status.md",
-      "git_blob_sha": "932ba7a1a075adb44c2b03787355b38fb6c57ef0",
-      "bytes": 1074
-    },
-    {
-      "path": "docs/ASSAY.md",
-      "git_blob_sha": "a7fb6a45db13ef9000e504e939498ed106c0814b",
-      "bytes": 8744
-    },
-    {
-      "path": "docs/PRODUCTION_PROMOTION.md",
-      "git_blob_sha": "703a36be11622d8244e60858f1c02f69abe0e464",
-      "bytes": 6121
-    },
-    {
-      "path": "hooks.json",
-      "git_blob_sha": "1af717e2e08607ab3d4570e4b330d918ddb931d3",
-      "bytes": 377
-    },
-    {
-      "path": "hooks/hooks-cursor.json",
-      "git_blob_sha": "aaa3aa44642c354067bd7a52d6febb4be4a49fd3",
-      "bytes": 2381
-    },
-    {
-      "path": "hooks/hooks.json",
-      "git_blob_sha": "cac4e0ffe6ea8278e87fb1bf4c3f48615bfb2972",
-      "bytes": 2655
-    },
-    {
-      "path": "host/cursor/talmudic-orient.mdc",
-      "git_blob_sha": "14c81e2774f198aabceda148d6d81a17486c6889",
-      "bytes": 779
-    },
-    {
+      "bytes": 11341,
       "path": "LICENSE",
-      "git_blob_sha": "d9bb11c14a893de9960fb0b5b788d20b3e54554e",
-      "bytes": 1088
+      "sha256": "1fe38d29b5b8b2dbd0a066bc9b2dd57211bf04ba39a3ebc163cf995dbc7fc067"
     },
     {
-      "path": "plugin.json",
-      "git_blob_sha": "9cc1e23e3dc3dfa253a1a2862681dfe7921213e8",
-      "bytes": 278
+      "bytes": 2160,
+      "path": "PRIVACY.md",
+      "sha256": "2fc9c4fdf21bbe633f18d58f3b42a7446175ffed1c9139018e45e30a81c15a66"
     },
     {
-      "path": "pyproject.toml",
-      "git_blob_sha": "b4641968e98d711ead3c78fd77a1787687e863bd",
-      "bytes": 440
-    },
-    {
+      "bytes": 12929,
       "path": "README.md",
-      "git_blob_sha": "d741c33a7f47cb2eb1c685a3bd640d9617e667c8",
-      "bytes": 11698
+      "sha256": "08c0f1b40fcb5fc596b43bb84744846d5aadf56123721145bd90b702ce5051e0"
     },
     {
-      "path": "release/prod-extra.txt",
-      "git_blob_sha": "43d494504e2a5838ad5219a06aef1f24e9190c53",
-      "bytes": 260
+      "bytes": 1545,
+      "path": "SECURITY.md",
+      "sha256": "21f0ba9b13bbd33d095451b9544e0b3929cafca335914331c1a80a5b69f653f6"
     },
     {
-      "path": "release/production-files.txt",
-      "git_blob_sha": "1e195a5661bad96b1e318ce144ab7a851e2a26bd",
-      "bytes": 778
-    },
-    {
-      "path": "scripts/build_production_tree.py",
-      "git_blob_sha": "9ecde45ed62a0704a660865bd054d0ec44f08980",
-      "bytes": 10121
-    },
-    {
-      "path": "scripts/cursor_adapter.py",
-      "git_blob_sha": "05bd0eff6927d54f3af991b05351aa692de261ba",
-      "bytes": 8017
-    },
-    {
-      "path": "scripts/cursor_guard.py",
-      "git_blob_sha": "f3583476d00107ab4fbd2c82838e413bb261946a",
-      "bytes": 1857
-    },
-    {
-      "path": "scripts/cursor_hook.py",
-      "git_blob_sha": "d394c3f2dd6df7762ca691bcee78971cf8578826",
-      "bytes": 2507
-    },
-    {
-      "path": "scripts/cursor_install_commands.py",
-      "git_blob_sha": "432ef1f12981163053ccec6f681466b19701cf83",
-      "bytes": 2462
-    },
-    {
-      "path": "scripts/cursor_observer.py",
-      "git_blob_sha": "c3ff54b6fdae174a07a46a6d7a47732fce914ed4",
-      "bytes": 1525
-    },
-    {
-      "path": "scripts/cursor_python.cmd",
-      "git_blob_sha": "29dc4926df86d876e5e4025c03c4fe260a16ac65",
-      "bytes": 1116
-    },
-    {
-      "path": "scripts/cursor_session_start.py",
-      "git_blob_sha": "d7cac5e76f0be49ae699f4c498ab2d446b15b4ba",
-      "bytes": 2387
-    },
-    {
-      "path": "scripts/cursor_stop.py",
-      "git_blob_sha": "ede058cd11aa3c12b4fa592ebb180865a0f2f62e",
-      "bytes": 1169
-    },
-    {
-      "path": "scripts/install_claude_skill.sh",
-      "git_blob_sha": "d4ad5293130c4252d424071ec4ca310fee724c5f",
-      "bytes": 386
-    },
-    {
-      "path": "scripts/talmudic_guard.py",
-      "git_blob_sha": "1cdc5d3fbe2ad6bf480e9cbfa75d3887437b37a5",
-      "bytes": 6824
-    },
-    {
-      "path": "scripts/talmudic_hook.py",
-      "git_blob_sha": "91bce0f06c1f748c4ebe50a623dcd625ac360f74",
-      "bytes": 7885
-    },
-    {
-      "path": "scripts/talmudic_observer.py",
-      "git_blob_sha": "b3307f4bc34e92e8649fedf065de77c728203b80",
-      "bytes": 2952
-    },
-    {
-      "path": "scripts/talmudic_stop.py",
-      "git_blob_sha": "f567c62be4f3f23161b7e0a0e432f2c8e2a13e96",
-      "bytes": 2467
-    },
-    {
-      "path": "skills/talmudic-memory/SKILL.md",
-      "git_blob_sha": "3777a347f7c429e2b1469ae0f2c0c38c89841d01",
-      "bytes": 20662
-    },
-    {
-      "path": "src/talmudic_memory/__init__.py",
-      "git_blob_sha": "f4db125faebd7178df919087cd689d9854c8e731",
-      "bytes": 91
-    },
-    {
-      "path": "src/talmudic_memory/active.py",
-      "git_blob_sha": "7256d89463a826b5fabad5f2010e3ceb7455ad39",
-      "bytes": 664
-    },
-    {
-      "path": "src/talmudic_memory/cli.py",
-      "git_blob_sha": "be190314e6732c020fe5710104a56a1e64b7c48a",
-      "bytes": 24688
-    },
-    {
-      "path": "src/talmudic_memory/core.py",
-      "git_blob_sha": "b76d393452568434c292d2981375718dac46bae6",
-      "bytes": 16215
-    },
-    {
-      "path": "src/talmudic_memory/digest.py",
-      "git_blob_sha": "175ce1a926a99b70f3f9e23857b2cf6edd44941b",
-      "bytes": 6636
-    },
-    {
-      "path": "src/talmudic_memory/doctor.py",
-      "git_blob_sha": "4347a5eb072d002e4d85e0910c16dc84d29e170e",
-      "bytes": 7001
-    },
-    {
-      "path": "src/talmudic_memory/index.py",
-      "git_blob_sha": "a9d4f6dd76efa78c432f5426e4c085f0044c1b8c",
-      "bytes": 12562
-    },
-    {
-      "path": "src/talmudic_memory/markers.py",
-      "git_blob_sha": "9f71a6728026be0745773e2bd36df1f97f3595a9",
-      "bytes": 4702
-    },
-    {
-      "path": "src/talmudic_memory/observer.py",
-      "git_blob_sha": "e5fb00ccae63d744f3e94b72e4178cf1f487f47d",
-      "bytes": 4570
-    },
-    {
-      "path": "src/talmudic_memory/orient.py",
-      "git_blob_sha": "ba89ca11e24f380e3cf556917f8f681905e083bc",
-      "bytes": 3610
-    },
-    {
-      "path": "src/talmudic_memory/preflight.py",
-      "git_blob_sha": "92bcf4b5896df45299776618ef358d290e787d87",
-      "bytes": 5474
-    },
-    {
-      "path": "src/talmudic_memory/runtime.py",
-      "git_blob_sha": "e5e28a3fef51be0406c6d90008fe794e722c21b2",
-      "bytes": 5972
-    },
-    {
-      "path": "src/talmudic_memory/session_pointer.py",
-      "git_blob_sha": "9b03798bc8a4c109ef23b0cec0a9048afaed4565",
-      "bytes": 1469
-    },
-    {
-      "path": "src/talmudic_memory/storage.py",
-      "git_blob_sha": "7e9a2283c274175c7943d4e67f36e8c5208bd7d9",
-      "bytes": 6253
-    },
-    {
-      "path": "src/talmudic_memory/survey.py",
-      "git_blob_sha": "57914b677b342bec47368712797863ddf0e80090",
-      "bytes": 7805
-    },
-    {
-      "path": "src/talmudic_memory/workspace.py",
-      "git_blob_sha": "3658684cd287d6d8482740fcef655b6c40383dd8",
-      "bytes": 9711
-    },
-    {
-      "path": "talmudic",
-      "git_blob_sha": "6ebd3a23894b056c4e2516f5c9c3b12bfed7982a",
-      "bytes": 820
-    },
-    {
-      "path": "talmudic.cmd",
-      "git_blob_sha": "39d06a20a6d5f2b38211e8daa5bb549a8c6db43d",
-      "bytes": 862
-    },
-    {
+      "bytes": 7305,
       "path": "USER_GUIDE.md",
-      "git_blob_sha": "340e20d6e71cb136988c6270f8337c7f8d4d0608",
-      "bytes": 6588
+      "sha256": "87fd8bfa4df528b4fb6aaf17c2b2ff9df5e77877085893609139c052c03daead"
+    },
+    {
+      "bytes": 1997,
+      "path": "agents/talmudic-scribe.md",
+      "sha256": "2e559ab39682dff29dde032369b53f75a14e4f5c39288456674efc2262b5599c"
+    },
+    {
+      "bytes": 1576881,
+      "path": "assets/talmudic_memory.png",
+      "sha256": "b440a76b820e6326c605afef6047bdeadb9b536e633b7e9b32ba21d73df3f43d"
+    },
+    {
+      "bytes": 2655,
+      "path": "claude/hooks-claude.json",
+      "sha256": "f56925588e41ae59c3c6fa3ed4b6d50a9677de925c5fe54c64632d862599584f"
+    },
+    {
+      "bytes": 1028,
+      "path": "commands/talmudic-doctor.md",
+      "sha256": "0f5c91567af6d4eea0455e8a93971cc5366f054da9d3a66aba4cb1c74254e467"
+    },
+    {
+      "bytes": 5435,
+      "path": "commands/talmudic-init.md",
+      "sha256": "2626a955a55261cfdce5953627f7d60519440de6fb3c44db6870011f15fbb38e"
+    },
+    {
+      "bytes": 1056,
+      "path": "commands/talmudic-recall.md",
+      "sha256": "7b321e214e61868b88900eaeffd227b9211953837683e3547587e50b82908e29"
+    },
+    {
+      "bytes": 1797,
+      "path": "commands/talmudic-remember.md",
+      "sha256": "b2ac741bbf84f58160b6cddee9c4f97deef71f47b2a54a552f9762be835986d8"
+    },
+    {
+      "bytes": 1074,
+      "path": "commands/talmudic-status.md",
+      "sha256": "56e8a8dfd9077830636be16c6b405418f82407bada093e687ba63145fe1f47f0"
+    },
+    {
+      "bytes": 8744,
+      "path": "docs/ASSAY.md",
+      "sha256": "4e155d127c02b33b591231e0ba53c23fa891c8edd3a7c229e0ce5b902c15dd2f"
+    },
+    {
+      "bytes": 6214,
+      "path": "docs/PRODUCTION_PROMOTION.md",
+      "sha256": "bf756130670e315f6908463b94c4b532310b2d629e80ef4d5de7e5b854a84e77"
+    },
+    {
+      "bytes": 2381,
+      "path": "hooks/hooks-cursor.json",
+      "sha256": "9055a8fd7b458c90e8b49865748c76e3d979993d21ea1a344cc2075a43cb573f"
+    },
+    {
+      "bytes": 278,
+      "path": "plugin.json",
+      "sha256": "5afaa8f19fc5209e495012129aa4c968d1d666f230854309026cc08abf2a276a"
+    },
+    {
+      "bytes": 440,
+      "path": "pyproject.toml",
+      "sha256": "6eb2e1d4a919ff63b37847d9d9eb05b4f5d287d627e1fe621ca90ebb2fc783e3"
+    },
+    {
+      "bytes": 465,
+      "path": "release/prod-extra.txt",
+      "sha256": "7e5678e08e3acffc3cf248b4f7a57af61b533db8833bc53d1384a151c63f7ceb"
+    },
+    {
+      "bytes": 816,
+      "path": "release/production-files.txt",
+      "sha256": "81209ef5ee002380e51cae02022d0f514910e4cd0b4c50ccccb7139189d7b2c9"
+    },
+    {
+      "bytes": 779,
+      "path": "rules/talmudic-orient.mdc",
+      "sha256": "c51c19aadc7496af94a3645436852643b21f14f413e0f68d6371684ea23be6f1"
+    },
+    {
+      "bytes": 10121,
+      "path": "scripts/build_production_tree.py",
+      "sha256": "9f483955ac1f7b53a12cb3207de8bfaaf315540f7c0a864889a96b39be832396"
+    },
+    {
+      "bytes": 8017,
+      "path": "scripts/cursor_adapter.py",
+      "sha256": "af3a769837a7cb18c3aec095ac505d48df9a5e6ac24a0a91f0b7e12cded44580"
+    },
+    {
+      "bytes": 1857,
+      "path": "scripts/cursor_guard.py",
+      "sha256": "b1052c5d966f7dad868e1bb9e91dbd50fc72cdffabd0eba8ac12dc6706f4d7a8"
+    },
+    {
+      "bytes": 2507,
+      "path": "scripts/cursor_hook.py",
+      "sha256": "84c97e45a264ce8aac7701214892b2946957a4687d9b70e1ba6e4b4ff7e66d55"
+    },
+    {
+      "bytes": 2452,
+      "path": "scripts/cursor_install_commands.py",
+      "sha256": "5fc23ca5b94ad73972cf6394b4ccaa6432ebd5fc872d03b6aae3b9a174e5ea62"
+    },
+    {
+      "bytes": 1525,
+      "path": "scripts/cursor_observer.py",
+      "sha256": "4d0df55a3b9adf62e3a295ea5c6d88dc63ef9aef31ff6cd07bedfc7fe0f2b11d"
+    },
+    {
+      "bytes": 1116,
+      "path": "scripts/cursor_python.cmd",
+      "sha256": "cae217ebcb6a6aa7ffbe476c44fad30c2115c5296c5796d0375a5d61049db616"
+    },
+    {
+      "bytes": 2387,
+      "path": "scripts/cursor_session_start.py",
+      "sha256": "32cab108093f2b469c51ba48a4355b25dacbeaa617cd744950c0862d6fdbab5a"
+    },
+    {
+      "bytes": 1169,
+      "path": "scripts/cursor_stop.py",
+      "sha256": "6155bdf7d8ca65e113acd66d2aefebf364df0813f46e7e26aaa6bf390c51e9dd"
+    },
+    {
+      "bytes": 386,
+      "path": "scripts/install_claude_skill.sh",
+      "sha256": "43fa30f9e9fec1e37de30c91c637c85cc83d5c395a0f836ace344b5355838b4f"
+    },
+    {
+      "bytes": 6824,
+      "path": "scripts/talmudic_guard.py",
+      "sha256": "ffa7eafc75460b66bc722d9001ad42760088bdb7c44f73ef5907c5d72eb337e8"
+    },
+    {
+      "bytes": 7885,
+      "path": "scripts/talmudic_hook.py",
+      "sha256": "8c9d911f4e693e41d2ebe506269f676a4d1bc5be6b10b28357d2d31d82bbff8a"
+    },
+    {
+      "bytes": 2952,
+      "path": "scripts/talmudic_observer.py",
+      "sha256": "2ca6c4490fd8b5d4a7bc435aeac5648cde8d58c3c49272f2e2c05fd1042aabb4"
+    },
+    {
+      "bytes": 2467,
+      "path": "scripts/talmudic_stop.py",
+      "sha256": "2ad9e7e541104e622618eeedd41036508117b8846ba1fa488e5f5f3e3c9d8151"
+    },
+    {
+      "bytes": 3645,
+      "path": "scripts/validate_cursor_plugin.py",
+      "sha256": "39148c7dbbb6386a17e063bb85749906e6175caf5e89d9096d95fe360ae5d03d"
+    },
+    {
+      "bytes": 20662,
+      "path": "skills/talmudic-memory/SKILL.md",
+      "sha256": "2bde27b01207c8d238ce27d02d706228c8679d822859dafead8eb43a90da2cac"
+    },
+    {
+      "bytes": 91,
+      "path": "src/talmudic_memory/__init__.py",
+      "sha256": "95336c868d6c7a9a9dd96c28e346810c15b9c15b61b43b4dfe10fc50cd5e3635"
+    },
+    {
+      "bytes": 664,
+      "path": "src/talmudic_memory/active.py",
+      "sha256": "f5df9168ed328f11046113891cc3501147b472bb8114e09295deb6043f0d6b03"
+    },
+    {
+      "bytes": 24688,
+      "path": "src/talmudic_memory/cli.py",
+      "sha256": "97588b724bc3b713b25724d091589ebc7143eb2ddd0ec5427beb768ad818f74b"
+    },
+    {
+      "bytes": 16215,
+      "path": "src/talmudic_memory/core.py",
+      "sha256": "4eb24e76216c3a338d1946b3ff9c14f2ee17c1b25a44d009e0d6ca7daf09aff4"
+    },
+    {
+      "bytes": 6636,
+      "path": "src/talmudic_memory/digest.py",
+      "sha256": "adbbed82b475c59bf9ea7c52f48f64de7e60075273fa901c5527ebd798a47e21"
+    },
+    {
+      "bytes": 7001,
+      "path": "src/talmudic_memory/doctor.py",
+      "sha256": "0480a380d842336b5ad569dd4b5a775bff984394110f9ba94cd0f4ff66d7b412"
+    },
+    {
+      "bytes": 12562,
+      "path": "src/talmudic_memory/index.py",
+      "sha256": "68d95a17013f186d3daa4f8eb3720dfbf6c2bc029f9e3a48f779fd50e37df4bd"
+    },
+    {
+      "bytes": 4702,
+      "path": "src/talmudic_memory/markers.py",
+      "sha256": "6033d419c28d157df80512713dd885ad2308e9920854e40e1f3a260372dec2bc"
+    },
+    {
+      "bytes": 4570,
+      "path": "src/talmudic_memory/observer.py",
+      "sha256": "25ad49853a7189b2dda0443859d49db9cac64719e0b3e2da6881db780b8493f3"
+    },
+    {
+      "bytes": 3610,
+      "path": "src/talmudic_memory/orient.py",
+      "sha256": "65961b2b426a8d1e25a43e1d2e90d01afdf626adfecd8176492447fc793bf645"
+    },
+    {
+      "bytes": 5474,
+      "path": "src/talmudic_memory/preflight.py",
+      "sha256": "86ee5cd0522a8e51e84958d3b82da9bd6568270b411c3b23ddb3f482c5ae393d"
+    },
+    {
+      "bytes": 5972,
+      "path": "src/talmudic_memory/runtime.py",
+      "sha256": "6ed02fbea3851cafe79cba4e29cb7355290cf1536b7a91244f1ec86c62e5ccbb"
+    },
+    {
+      "bytes": 1534,
+      "path": "src/talmudic_memory/session_pointer.py",
+      "sha256": "0317e1d43596e1c5814781741e3ed4e98ad65fdfedd2a9e453083f50f9559a83"
+    },
+    {
+      "bytes": 6253,
+      "path": "src/talmudic_memory/storage.py",
+      "sha256": "f9d7bd8223b179478f56098f7d21689127083cc665eb724e87dc7c684eeb81e9"
+    },
+    {
+      "bytes": 7805,
+      "path": "src/talmudic_memory/survey.py",
+      "sha256": "3837b802bed0991190eb3552468e7de231139755d4d2a3179ae0198e30eb5331"
+    },
+    {
+      "bytes": 9711,
+      "path": "src/talmudic_memory/workspace.py",
+      "sha256": "bb4449b52c0c9e73101a20fa25a4118e33ee396c51a1565926e53c28c8aa87be"
+    },
+    {
+      "bytes": 820,
+      "path": "talmudic",
+      "sha256": "c40ee6deaec22b3ef0e1d6a778e229ac2a9300b86ba1c7191824e27f6dffbe57"
+    },
+    {
+      "bytes": 862,
+      "path": "talmudic.cmd",
+      "sha256": "6614bb7752903162412ae5083b14f152e3507cab2e283a9fbfe09eced0267c7f"
     }
-  ]
+  ],
+  "product": "Talmudic AI Memory",
+  "promotion": "PROD pulls exact QA SHA; allowlisted export; public URLs rewritten to production repo",
+  "schema": 1,
+  "source_branch": "main",
+  "source_repository": "gilav2/Talmudic-AI-memory",
+  "source_sha": "29e3bd280eddd10923c50bb5260455e33066cb62",
+  "target_repository": "AI4AI-Labs/talmudic-ai-memory",
+  "thesis": "The agent dies. The work is immortal.",
+  "version": "0.3.0b1"
 }
