@@ -40,7 +40,9 @@ Already-initialized projects with `.talmudic/` remain active for compatibility. 
 
 ## Commands
 
-`/talmudic-init`, `/talmudic-remember`, `/talmudic-recall`, `/talmudic-status`, and `/talmudic-doctor` operate on project Gemara. A host `/remember` command is not the same thing.
+**`/talmudic-agent-start`** (**Talmudic-Agent-start**): manually onboard an agent onto Gemara, or refresh belonging when SessionStart is missing/skipped (cloud agents, dedicated agents, heartbeat). Pointer + sync/orient; not a Gemara dump.
+
+Also: `/talmudic-init`, `/talmudic-remember`, `/talmudic-recall`, `/talmudic-status`, and `/talmudic-doctor` operate on project Gemara. A host `/remember` command is not the same thing.
 
 Cursor may copy the Talmudic command templates into the opened project's `.cursor/commands/` so they remain available from the slash menu.
 
@@ -62,7 +64,7 @@ Cursor's manifest must use `hooks/hooks-cursor.json` (in `hooks/` so scanners gl
 
 ## Cloud agents
 
-Cursor cloud agents skip `sessionStart` / `sessionEnd`. They still run the available shell/tool/file/compact/stop hooks. The installed `.cursor/rules/talmudic-orient.mdc` tells the agent to search the index when the SessionStart pointer is absent.
+Cursor cloud agents skip `sessionStart` / `sessionEnd`. They still run the available shell/tool/file/compact/stop hooks. Run **`/talmudic-agent-start`** to manually onboard the agent and refresh Gemara belonging; the installed `.cursor/rules/talmudic-orient.mdc` also tells the agent to search the index when the SessionStart pointer is absent.
 
 **Do not compensate by dumping Gemara.** The tested scaling path is map → targeted fetch, not history → context.
 

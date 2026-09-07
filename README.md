@@ -185,7 +185,7 @@ Talmudic's normal path is:
              next agent
 ```
 
-SessionStart injects a small **index pointer**, not the Gemara.
+SessionStart injects a small **index pointer**, not the Gemara. When SessionStart did not run (cloud agents, dedicated agents, heartbeat), run **`/talmudic-agent-start`** to manually onboard the agent and refresh Gemara belonging.
 
 The agent searches for the current task and retrieves the relevant reasoning. Thousands of unrelated Sugyot stay out of context.
 
@@ -289,6 +289,7 @@ Do not run `/talmudic-init` on the Talmudic plugin repository itself.
 
 | Command | Purpose |
 |---|---|
+| `/talmudic-agent-start` | **Talmudic-Agent-start**: manually onboard an agent onto Gemara, or refresh belonging when SessionStart is missing/skipped (cloud agents, dedicated agents, heartbeat). Pointer + sync/orient; not a Gemara dump |
 | `/talmudic-remember` | Preserve something a replacement agent must not rediscover |
 | `/talmudic-recall` | Retrieve prior project reasoning |
 | `/talmudic-status` | Inspect current workstream state |

@@ -33,6 +33,7 @@ FORBIDDEN_HOOK_PATHS = (
     ROOT / "cursor" / "hooks-cursor.json",
 )
 EXPECTED_COMMANDS = {
+    "talmudic-agent-start",
     "talmudic-doctor",
     "talmudic-init",
     "talmudic-recall",

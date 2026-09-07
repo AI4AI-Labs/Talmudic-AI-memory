@@ -1,6 +1,6 @@
 ---
 name: talmudic-memory
-description: Project intelligence (Gemara) via the talmudic CLI — why and why-not, not Claude Memory or MEMORY.md. At the start of work in an opted-in Talmudic project (`.cursor/talmudic.json` enabled or `.talmudic/` present), and whenever the operator says Remember/Recall/Status/Doctor, Talmudic Init, or invokes /talmudic-remember, /talmudic-recall, /talmudic-status, /talmudic-doctor, /talmudic-init. If this workspace is not opted in, do not use this skill. Persist workstream judgment so a future agent can resume. If you see /talmudic-origin, that is /talmudic-init.
+description: Project intelligence (Gemara) via the talmudic CLI — why and why-not, not Claude Memory or MEMORY.md. At the start of work in an opted-in Talmudic project (`.cursor/talmudic.json` enabled or `.talmudic/` present), and whenever the operator says Remember/Recall/Status/Doctor, Talmudic Init, Talmudic-Agent-start, or invokes /talmudic-agent-start, /talmudic-remember, /talmudic-recall, /talmudic-status, /talmudic-doctor, /talmudic-init. If this workspace is not opted in, do not use this skill. Persist workstream judgment so a future agent can resume. If you see /talmudic-origin, that is /talmudic-init.
 ---
 
 # Talmudic Memory — Workstream Continuity Skill
@@ -13,6 +13,7 @@ Do not preserve the conversation. Preserve the **intelligence of the project**: 
 
 The user-facing vocabulary is intentionally small:
 
+- **Agent-start** — manually onboard an agent onto Gemara, or refresh belonging when SessionStart did not run (cloud agents, dedicated agents, heartbeat).
 - **Remember** — preserve something future work should not lose.
 - **Recall** — retrieve a past decision, rationale, result or state.
 - **Status** — show where the workstream stands and what changed since this participant last saw it.
@@ -24,6 +25,7 @@ This is **not** Claude Memory. "Remember this" in a chat must not be routed to M
 
 Operator slash commands (Claude Code `/help` Custom commands, Cursor `/` command menu):
 
+- `/talmudic-agent-start` — **Talmudic-Agent-start**: manually onboard an agent onto Gemara, or refresh belonging when SessionStart is missing/skipped (cloud agents, dedicated agents, heartbeat). Pointer contract + sync/orient; not a Gemara dump. Safe to re-run after compaction or mid-session.
 - `/talmudic-remember` — classify NONE / STATE / OPERATION / REASONING, then write Gemara.
 - `/talmudic-recall` — search Gemara.
 - `/talmudic-status` — current Resume.
@@ -42,7 +44,7 @@ If neither is present, stop using this skill (no-op). Do not create `.talmudic/`
 
 When opted in, before investigating, planning, or implementing: if this conversation already contains "Talmudic Memory is active" (`hooks_context` / SessionStart), you are joining an ongoing project. Files may be unfinished or still present a later-rejected path as current — leftover, not a new mandate. Gemara is the record earlier agents and the operator left: why decisions were made and how the work was carried out — tried, worked, failed and why — so it isn't retried. Later records supersede what a file still says. If reality contradicts a Sugya, add a new one with the operator; the old record stays. Sync and preflight already ran. Your first move: launcher in `.talmudic/runtime.json`, then `orient "<task>"` or `recall "<question>"`. Quote record ids; tie work to the record, not a leftover file. Search pulls this task's slice; `digest` dumps the workstream; globbing the tree or the plugin cache is starting over. After Gemara has the why and how, open files to extend or change the work. You inherit this handoff, and it's yours to keep current: when this session learns a why, a how, or a why-not a future agent would miss, record it in Gemara through that same launcher (`sugya` or `note`). Then continue this skill.
 
-If SessionStart is missing (cloud agents skip it): same first move after resolving the launcher. `/talmudic-status` is Resume, not a substitute for searching the index. If the launcher is missing, report a bootstrap problem; do not hunt the repo for source.
+If SessionStart is missing (cloud agents skip it): run `/talmudic-agent-start` to manually onboard and refresh belonging, or same first move after resolving the launcher. `/talmudic-status` is Resume, not a substitute for searching the index. If the launcher is missing, report a bootstrap problem; do not hunt the repo for source.
 
 ## Runtime resolution
 
@@ -101,7 +103,7 @@ Otherwise:
 7. Run `orient "<current user task/request>"` against the synchronized view **before** inspecting the repo or repeating any test/investigation.
 8. If preflight reports blocking contract/schema/recovery changes, or orient reports open In-Flight/blockers, reconcile before new material writes. If orient reports `PRIOR_WORK_FOUND`, verify and extend only what is missing/changed instead of repeating the prior investigation.
 
-On hook-capable hosts, SessionStart performs bootstrap/sync + preflight and injects a **pointer**: leftover files are not a new mandate; Gemara holds why and how; you inherit the handoff; first move is the launcher then `orient "<task>"` or `recall "<question>"`; `digest` dumps, search pulls a slice; write `sugya` / `note` on that launcher. Claude Code injects that pointer (`<session_start_digest>`). Cursor Agent (3.18.9+) injects it as `hooks_context` and sets `TALMUDIC_MEMORY=1`. It does **not** dump Sugyot. Cloud agents skip `sessionStart` — then search the index the same way (`orient "<task>"` / `recall "<question>"`). `digest` is an operator/debug dump of the whole workstream and does not scale.
+On hook-capable hosts, SessionStart performs bootstrap/sync + preflight and injects a **pointer**: leftover files are not a new mandate; Gemara holds why and how; you inherit the handoff; first move is the launcher then `orient "<task>"` or `recall "<question>"`; `digest` dumps, search pulls a slice; write `sugya` / `note` on that launcher. Claude Code injects that pointer (`<session_start_digest>`). Cursor Agent (3.18.9+) injects it as `hooks_context` and sets `TALMUDIC_MEMORY=1`. It does **not** dump Sugyot. Cloud agents skip `sessionStart` — run `/talmudic-agent-start` to manually onboard and refresh belonging, or search the index the same way (`orient "<task>"` / `recall "<question>"`). `digest` is an operator/debug dump of the whole workstream and does not scale.
 
 Preflight answers:
 - **Where are we now?**
