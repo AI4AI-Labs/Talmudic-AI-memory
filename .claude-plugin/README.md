@@ -9,7 +9,7 @@ For the product model and benchmark evidence, see [../README.md](../README.md). 
 ## Install
 
 ```bash
-claude plugin marketplace add AI4AI-Labs/Talmudic-AI-memory
+claude plugin marketplace add AI4AI-Labs/talmudic-ai-memory
 claude plugin install talmudic-memory@talmudic-ai-memory --scope project
 ```
 
@@ -21,6 +21,7 @@ Beta installs track this repo's **`main`**. Claude Code caches plugins by versio
 
 | Command | Purpose |
 |---|---|
+| `/talmudic-agent-start` | **Talmudic-Agent-start**: manually onboard an agent onto Gemara, or refresh belonging when SessionStart is missing/skipped (cloud agents, dedicated agents, heartbeat). Pointer + sync/orient; not a Gemara dump |
 | `/talmudic-init` | Map the project/workstream |
 | `/talmudic-remember` | Persist continuity-critical state, operations, why and why-not |
 | `/talmudic-recall` | Search shared Gemara |

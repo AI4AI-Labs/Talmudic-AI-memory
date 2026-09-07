@@ -90,6 +90,8 @@ new task / new agent
         ▼
 SessionStart: "Talmudic Memory is active" — leftover not a mandate; Gemara is why and how; first move is launcher then orient "<task>" / recall "<question>"
         │
+        ├─ SessionStart missing? → /talmudic-agent-start (onboard / refresh belonging)
+        │
         ▼
 search index for THIS task
    orient / recall
@@ -115,12 +117,13 @@ SessionStart provides an index pointer. The agent searches for the current task 
 
 Do not make `digest` the default startup action.
 
-Cursor cloud agents skip SessionStart; the installed project rule tells them to search the index instead.
+Cursor cloud agents skip SessionStart; run `/talmudic-agent-start` to manually onboard the agent onto Gemara and refresh belonging, or follow the installed project rule to search the index instead.
 
 ## Commands
 
 | Command | Use when |
 |---|---|
+| `/talmudic-agent-start` | **Talmudic-Agent-start**: manually onboard an agent onto Gemara, or refresh belonging when SessionStart is missing/skipped (cloud agents, dedicated agents, heartbeat). Pointer + sync/orient; not a Gemara dump |
 | `/talmudic-init` | First-time project/workstream mapping |
 | `/talmudic-remember …` | A future agent must not lose this state, operation, decision, rejection, or reopen condition |
 | `/talmudic-recall …` | “Why did we reject X?” / “What did the previous agent establish?” |

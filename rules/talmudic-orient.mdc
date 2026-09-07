@@ -7,6 +7,6 @@ This project uses Talmudic Memory. You are part of an ongoing workstream. Files 
 
 If this conversation already contains "Talmudic Memory is active" (`hooks_context` / SessionStart), sync and preflight already ran. Your first move: launcher in `.talmudic/runtime.json`, then `orient "<task>"` or `recall "<question>"`. Quote `S-####` / `R-####`; tie work to the record, not a leftover file. Search pulls this task's slice; `digest` dumps the workstream; globbing the tree or the plugin cache is starting over. After Gemara has the why and how, open files to extend or change the work. You inherit this handoff, and it's yours to keep current: when this session learns a why, a how, or a why-not a future agent would miss, record it in Gemara through that same launcher (`sugya` or `note`). Material writes go through In-Flight on that launcher.
 
-If SessionStart is missing (cloud agents skip it): same first move after resolving the launcher — `orient "<task>"` or `recall "<question>"` — same duty to leave the next handoff through that launcher.
+If SessionStart is missing (cloud agents skip it): run `/talmudic-agent-start` to manually onboard onto Gemara and refresh belonging, or same first move after resolving the launcher — `orient "<task>"` or `recall "<question>"` — same duty to leave the next handoff through that launcher.
 
 Use `/talmudic-*` for project memory. If `.talmudic/` is missing and `.cursor/talmudic.json` is not enabled, this project has not opted in.

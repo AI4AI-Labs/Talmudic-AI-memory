@@ -1,9 +1,9 @@
 {
   "files": [
     {
-      "bytes": 2574,
+      "bytes": 2813,
       "path": ".claude-plugin/README.md",
-      "sha256": "460eff96ea2c27d4fdc0cc82b9a4bd31965f5fc39eedea914b55d40681610459"
+      "sha256": "ff282815dbd2ecc5643aa3e2cd4b7943a8c7e15fbfbe454fd37c2d5af5865227"
     },
     {
       "bytes": 1124,
@@ -16,9 +16,9 @@
       "sha256": "e2f2f3809d7f975bcb202827dfc67be0c5c3d6ef52331b7f392282d518d79b15"
     },
     {
-      "bytes": 3918,
+      "bytes": 4262,
       "path": ".cursor-plugin/README.md",
-      "sha256": "64c649ae92b54819448f0ad689d074b90ec748c563830cb4b189f0890588601c"
+      "sha256": "c249d3ca10a1872cc87c9e7ee6b19f54e9014a9eeb7782ebb593129eb8cf9682"
     },
     {
       "bytes": 1350,
@@ -86,9 +86,9 @@
       "sha256": "2fc9c4fdf21bbe633f18d58f3b42a7446175ffed1c9139018e45e30a81c15a66"
     },
     {
-      "bytes": 13605,
+      "bytes": 14011,
       "path": "README.md",
-      "sha256": "45368b3726f9542d18c6746917f3817d203d0cd3862c5199c4e0fbfc5bc18b68"
+      "sha256": "cf11f8acc05de24425d3b3e3704e38f33b697982e65c565caba9bc3758e558f6"
     },
     {
       "bytes": 1545,
@@ -96,9 +96,9 @@
       "sha256": "21f0ba9b13bbd33d095451b9544e0b3929cafca335914331c1a80a5b69f653f6"
     },
     {
-      "bytes": 7557,
+      "bytes": 7993,
       "path": "USER_GUIDE.md",
-      "sha256": "81f4e8cafd3a562a3ace764d6f5d6937f266a96fe1ca8c67eb77e1179dd0eb2d"
+      "sha256": "338b0cd21f1e19dcade17b2f246c4d949cd9904e46f4c0cfe0c98413ba2348e9"
     },
     {
       "bytes": 1997,
@@ -114,6 +114,11 @@
       "bytes": 2655,
       "path": "claude/hooks-claude.json",
       "sha256": "f56925588e41ae59c3c6fa3ed4b6d50a9677de925c5fe54c64632d862599584f"
+    },
+    {
+      "bytes": 3038,
+      "path": "commands/talmudic-agent-start.md",
+      "sha256": "b7dc33ea7cbe82cc8252467e1d88e743a185d1f5808a32ce8493da6c271f4315"
     },
     {
       "bytes": 1028,
@@ -176,9 +181,9 @@
       "sha256": "81209ef5ee002380e51cae02022d0f514910e4cd0b4c50ccccb7139189d7b2c9"
     },
     {
-      "bytes": 1725,
+      "bytes": 1811,
       "path": "rules/talmudic-orient.mdc",
-      "sha256": "f91f60fe65d19a3d113cebd242e426e98e9e47918fbea5ecdd40737b08bf2c84"
+      "sha256": "3a1d92c6bc55211398f5ec4934dece73d7575dd479a2cae27aaa00503def0443"
     },
     {
       "bytes": 10121,
@@ -251,14 +256,14 @@
       "sha256": "2ad9e7e541104e622618eeedd41036508117b8846ba1fa488e5f5f3e3c9d8151"
     },
     {
-      "bytes": 12875,
+      "bytes": 12903,
       "path": "scripts/validate_cursor_plugin.py",
-      "sha256": "81ecfb601880a67c17f05bcb213cbd11b1c1b523f77e58e112c34ad2fde746f0"
+      "sha256": "03888575846ae52e6a1ac0a17efcecfa5d7445d4c9befa6a226f85aba8dc52df"
     },
     {
-      "bytes": 21665,
+      "bytes": 22307,
       "path": "skills/talmudic-memory/SKILL.md",
-      "sha256": "565286939da35429a64450629f4594a3890fc5498f094c4925f21441edfc7c3b"
+      "sha256": "ea40bba3f344e9077c98e1cefbec7b94a239b75212afb363ce8eb5386da4e613"
     },
     {
       "bytes": 91,
@@ -356,8 +361,8 @@
   "schema": 1,
   "source_branch": "main",
   "source_repository": "gilav2/Talmudic-AI-memory",
-  "source_sha": "29e3bd280eddd10923c50bb5260455e33066cb62",
-  "target_repository": "AI4AI-Labs/Talmudic-AI-memory",
+  "source_sha": "f671a4222f4c70b87c2eb161445ccb99427cf6fe",
+  "target_repository": "AI4AI-Labs/talmudic-ai-memory",
   "thesis": "The agent dies. The work is immortal.",
   "version": "0.3.0b1"
 }
