@@ -2,9 +2,12 @@
 """Build a deterministic, allowlisted production tree from an exact QA SHA.
 
 PROD pulls QA. This script never copies the repository wholesale. It copies only
-paths listed in release/production-files.txt, overlays PROD-owned files, rewrites
-public install URLs to the production repository, rejects private/runtime residue,
-verifies version alignment, and emits RELEASE_PROVENANCE.json.
+paths listed in release/production-files.txt, rewrites public install URLs to the
+production repository, rejects private/runtime residue, verifies version alignment,
+and emits RELEASE_PROVENANCE.json.
+
+Promotion policy (release/ allowlists, docs/PRODUCTION_PROMOTION.md, docs/internal/**)
+stays on QA and is never copied into the public PROD tree.
 """
 from __future__ import annotations
 
@@ -30,6 +33,14 @@ FORBIDDEN_PARTS = {
 }
 FORBIDDEN_SUFFIXES = {".pem", ".key", ".p12", ".pfx", ".sqlite", ".db"}
 FORBIDDEN_NAMES = {".env", "id_rsa", "id_ed25519", "credentials.json"}
+FORBIDDEN_EXPORT_PREFIXES = (
+    "docs/internal/",
+    "release/",
+)
+FORBIDDEN_EXPORT_FILES = (
+    "docs/PRODUCTION_PROMOTION.md",
+    "release/prod-extra.txt",
+)
 QA_REPO = "gilav2/Talmudic-AI-memory"
 PUBLIC_REWRITE_PATHS = (
     "README.md",
@@ -44,6 +55,8 @@ PUBLIC_REWRITE_PATHS = (
 )
 PRESERVE_ON_APPLY = (
     ".github/workflows/promote-from-qa.yml",
+    "scripts/build_production_tree.py",
+    "release/production-files.txt",
 )
 
 
@@ -63,6 +76,21 @@ def posix(rel: Path) -> str:
     return str(rel).replace(os.sep, "/")
 
 
+def is_forbidden_export(rel: Path | str) -> bool:
+    key = posix(Path(rel)) if not isinstance(rel, str) else rel.replace(os.sep, "/")
+    if key in FORBIDDEN_EXPORT_FILES:
+        return True
+    return any(
+        key.startswith(prefix) or key == prefix.rstrip("/")
+        for prefix in FORBIDDEN_EXPORT_PREFIXES
+    )
+
+
+def assert_export_safe(rel: Path | str) -> None:
+    if is_forbidden_export(rel):
+        die(f"forbidden export path (promotion policy stays on QA): {rel}")
+
+
 def is_forbidden(rel: Path) -> bool:
     return any(part in FORBIDDEN_PARTS or part.endswith(".egg-info") for part in rel.parts)
 
@@ -72,6 +100,7 @@ def copy_entry(src: Path, dst_root: Path, source_root: Path) -> None:
         rel = src.resolve().relative_to(source_root.resolve())
     except Exception:
         die(f"path escapes source root: {src}")
+    assert_export_safe(rel)
     if is_forbidden(rel):
         return
     if src.is_symlink():
@@ -154,6 +183,7 @@ def install_pipeline_files(pipeline_root: Path, out: Path) -> None:
     if owned.is_dir():
         for src in sorted(p for p in owned.rglob("*") if p.is_file()):
             rel = src.relative_to(owned)
+            assert_export_safe(rel)
             if is_forbidden(rel):
                 die(f"forbidden prod-owned path: {rel}")
             dst = out / rel
@@ -162,6 +192,7 @@ def install_pipeline_files(pipeline_root: Path, out: Path) -> None:
     extra_list = pipeline_root / "release" / "prod-extra.txt"
     if extra_list.is_file():
         for line in read_list(extra_list):
+            assert_export_safe(line)
             src = pipeline_root / line
             if not src.is_file():
                 die(f"prod-extra path missing: {line}")
@@ -186,6 +217,7 @@ def apply_tree(tree: Path, dest: Path) -> None:
     new_paths: set[str] = set()
     for path in collect_files(tree):
         rel = path.relative_to(tree)
+        assert_export_safe(rel)
         if is_forbidden(rel):
             die(f"forbidden production artifact: {rel}")
         dst = dest / rel
@@ -205,9 +237,11 @@ def write_provenance(
 ) -> list[dict[str, object]]:
     files = []
     for path in collect_files(out):
+        rel = path.relative_to(out)
+        assert_export_safe(rel)
         files.append(
             {
-                "path": posix(path.relative_to(out)),
+                "path": posix(rel),
                 "sha256": sha256(path),
                 "bytes": path.stat().st_size,
             }
@@ -243,6 +277,7 @@ def build_tree(args: argparse.Namespace) -> list[dict[str, object]]:
 
     entries = []
     for line in read_list(allowlist):
+        assert_export_safe(line)
         path = source / line
         if not path.exists():
             die(f"allowlisted path missing: {line}")
@@ -251,7 +286,8 @@ def build_tree(args: argparse.Namespace) -> list[dict[str, object]]:
     for path in entries:
         copy_entry(path, out, source)
 
-    install_pipeline_files(pipeline_root, out)
+    if args.overlay_pipeline:
+        install_pipeline_files(pipeline_root, out)
     rewrite_public_urls(out, args.prod_repo)
 
     versions = {
@@ -265,6 +301,7 @@ def build_tree(args: argparse.Namespace) -> list[dict[str, object]]:
 
     for path in out.rglob("*"):
         rel = path.relative_to(out)
+        assert_export_safe(rel)
         if is_forbidden(rel):
             die(f"forbidden production artifact: {rel}")
 
@@ -294,6 +331,11 @@ def main() -> int:
     parser.add_argument("--allowlist", default="release/production-files.txt")
     parser.add_argument("--apply-to", default="")
     parser.add_argument("--apply-only", action="store_true")
+    parser.add_argument(
+        "--overlay-pipeline",
+        action="store_true",
+        help="Legacy: overlay release/prod-owned and release/prod-extra.txt from pipeline-root",
+    )
     args = parser.parse_args()
 
     if args.apply_only:

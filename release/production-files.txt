@@ -13,6 +13,8 @@ agents
 assets
 claude
 commands
+docs/ASSAY.md
+docs/THESIS.md
 hooks
 rules
 plugin.json
