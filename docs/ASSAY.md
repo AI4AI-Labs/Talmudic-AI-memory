@@ -4,7 +4,7 @@
 
 **Product:** Talmudic AI Memory, beta **0.3.0b1**  
 **Claim under test:** project intelligence (why, and why-not) survives agent death, session reset, and IDE switch.  
-**Audience:** marketing and partner agents. Cite this file; do not invent metrics.
+**Audience:** operators evaluating continuity claims; cite measured results only.
 
 This is an **assay**: what we measured, how, what gold means, and what we still do not claim.
 
@@ -148,28 +148,3 @@ This is on marketplace **`main`** via [PR #16](https://github.com/gilav2/Talmudi
 - Gemara is not a truth oracle. Provenance is not verification. A later agent must still check systems of record (as Session B did with `lab.db`).
 - We are **beta 0.3.0b1**, not 1.0.
 - Controlled Gemara-vs-no-Gemara quality trials (repeated traps, operator corrections) are the **next** evidence layer — not this assay.
-
----
-
-## How marketing agents should speak
-
-**Use**
-
-- **The agent dies. The work is immortal.**
-- Decision archaeology for coding agents.
-- Shared **project intelligence**: why this, and **why not that**.
-- New agent, new IDE, first prompt, no onboarding: refuse the stale path from Gemara.
-- Dual harness: Cursor and Claude Code, one Gemara, neither owns it.
-- Map, not dump. `FETCH BOUNDED`.
-- Not chat Memory. Not a changelog. Not a vector store.
-
-**Do not**
-
-- Quote invented Chat B dialogue.
-- Call smoke tokens a “live customer demo.”
-- Say “loads all memory into context so the agent knows everything.”
-- Imply 1.0 or universal productivity gains.
-
-**The line to keep**
-
-> The agent dies. The work is immortal. A new colleague on another IDE, asked on the first prompt whether to do the thing the repo still recommends, can say no — because the project remembered **why not**.
